@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Joyce Designs — Contacto</title>
+<meta name="description" content="Joyce Designs — Pijamas, batas, accesorios personalizados y más. Contáctanos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #92a6be;
+    --blue-dark: #7b91a9;
+    --blue-light: #aebfcf;
+    --sage: #a4a592;
+    --sage-light: #c5c6b8;
+    --mint: #c8e5df;
+    --gray-light: #f2f2f2;
+    --white: #ffffff;
+    --text-dark: #3a3f47;
+    --text-medium: #5f6770;
+    --text-light: #8a9099;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--gray-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-wrapper {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    background: var(--white);
+    box-shadow: 0 0 40px rgba(146,166,190,0.15);
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -30px;
+    width: 140px;
+    height: 140px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+
+  .logo-img {
+    max-width: 280px;
+    width: 75%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+  }
+
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+    margin-top: 14px;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+
+  /* ── Bow Divider ── */
+  .bow-divider {
+    text-align: center;
+    padding: 18px 0 10px;
+  }
+
+  .bow-divider svg {
+    width: 40px;
+    height: 28px;
+    color: var(--blue-light);
+  }
+
+  /* ── Contact Cards ── */
+  .section {
+    padding: 0 24px;
+  }
+
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: var(--gray-light);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+  }
+
+  .contact-card:hover, .contact-card:active {
+    border-color: var(--blue-light);
+    background: rgba(146,166,190,0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(146,166,190,0.15);
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+  }
+
+  .card-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .card-icon.instagram { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+  .card-icon.whatsapp { background: #25D366; }
+  .card-icon.tiktok { background: #010101; }
+  .card-icon.website { background: var(--blue); }
+  .card-icon.phone { background: var(--sage); }
+  .card-icon.email { background: var(--blue-dark); }
+  .card-icon.location { background: #c4816a; }
+
+  .card-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .card-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  .card-detail {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-arrow {
+    color: var(--text-light);
+    flex-shrink: 0;
+  }
+
+  .card-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ── vCard Button ── */
+  .vcard-section {
+    padding: 24px 24px 0;
+  }
+
+  .vcard-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+  }
+
+  .vcard-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(146,166,190,0.35);
+  }
+
+  .vcard-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ── QR Section ── */
+  .qr-section {
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .qr-container {
+    display: inline-block;
+    padding: 16px;
+    background: var(--white);
+    border: 2px solid var(--gray-light);
+    border-radius: 16px;
+  }
+
+  .qr-container canvas {
+    border-radius: 4px;
+  }
+
+  .qr-label {
+    font-size: 10px;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    padding: 20px 24px 32px;
+    text-align: center;
+    border-top: 1px solid var(--gray-light);
+  }
+
+  .footer-brand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    color: var(--blue);
+  }
+
+  .footer-copy {
+    font-size: 10px;
+    color: var(--text-light);
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .contact-card { animation: fadeUp 0.5s ease both; }
+  .contact-card:nth-child(1) { animation-delay: 0.05s; }
+  .contact-card:nth-child(2) { animation-delay: 0.1s; }
+  .contact-card:nth-child(3) { animation-delay: 0.15s; }
+  .contact-card:nth-child(4) { animation-delay: 0.2s; }
+  .contact-card:nth-child(5) { animation-delay: 0.25s; }
+  .contact-card:nth-child(6) { animation-delay: 0.3s; }
+  .contact-card:nth-child(7) { animation-delay: 0.35s; }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <img class="logo-img" src="data:image/png;base64,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" alt="Joyce Designs">
+    <div class="tagline">Pijamas, batas y accesorios personalizados</div>
+  </div>
+
+  <!-- Bow Divider -->
+  <div class="bow-divider">
+    <svg viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 16C14 16 8 10 4 6C2 4 1 5 2 7C5 12 12 20 20 20C28 20 35 12 38 7C39 5 38 4 36 6C32 10 26 16 20 16Z" fill="currentColor" opacity="0.4"/>
+      <path d="M20 16C14 16 8 22 4 26C2 28 1 27 2 25C5 20 12 12 20 12C28 12 35 20 38 25C39 27 38 28 36 26C32 22 26 16 20 16Z" fill="currentColor" opacity="0.25"/>
+      <circle cx="20" cy="16" r="2.5" fill="currentColor" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Social & Contact Links -->
+  <div class="section">
+    <div class="section-title">Encuéntranos</div>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/joycedesigns" target="_blank" rel="noopener" class="contact-card">
+      <div class="card-icon instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </div>
+      <div class="card-info">
+        <div class="card-label">Instagram</div>
+        <div class="card-detail">@joycedesigns</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/18096048379" target="_blank" rel="noopener" class="contact-card">
+      <div class="card-icon whatsapp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div class="card-info">
+        <div class="card-label">WhatsApp</div>
+        <div class="card-detail">+1 (809) 604-8379</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@joyce.designs" target="_blank" rel="noopener" class="contact-card">
+      <div class="card-icon tiktok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.28 8.28 0 005.58 2.15V11.7a4.83 4.83 0 01-3.77-1.24V6.69h3.77z"/></svg>
+      </div>
+      <div class="card-info">
+        <div class="card-label">TikTok</div>
+        <div class="card-detail">@joyce.designs</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+    </a>
+
+    <!-- Website -->
+    <a href="https://www.joyce.do" target="_blank" rel="noopener" class="contact-card">
+      <div class="card-icon website">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <div class="card-info">
+        <div class="card-label">Página Web</div>
+        <div class="card-detail">www.joyce.do</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+    </a>
+
+    <!-- Phone -->
+    <a href="tel:+18295449968" class="contact-card">
+      <div class="card-icon phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
+      <div class="card-info">
+        <div class="card-label">Llámanos</div>
+        <div class="card-detail">829-544-9968</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:tienda@joyce.do" class="contact-card">
+      <div class="card-icon email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+      </div>
+      <div class="card-info">
+        <div class="card-label">Email</div>
+        <div class="card-detail">tienda@joyce.do</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+    </a>
+
+    <!-- Location -->
+    <a href="https://maps.google.com/?q=Calle+Elipse+No.+9+Urbanización+Fernández+Santo+Domingo" target="_blank" rel="noopener" class="contact-card">
+      <div class="card-icon location">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="card-info">
+        <div class="card-label">Visítanos</div>
+        <div class="card-detail">Calle Elipse No. 9, Urb. Fernández</div>
+      </div>
+      <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+    </a>
+  </div>
+
+  <!-- Save Contact -->
+  <div class="vcard-section">
+    <button class="vcard-btn" onclick="downloadVCard()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
+      Guardar Contacto
+    </button>
+  </div>
+
+  <!-- QR Code -->
+  <div class="qr-section">
+    <div class="section-title">Comparte con QR</div>
+    <div class="qr-container">
+      <div id="qrcode"></div>
+    </div>
+    <div class="qr-label">Escanea para ver esta página</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-brand">Joyce Designs</div>
+    <div class="footer-copy">&copy; 2026 — Todos los derechos reservados</div>
+  </div>
+
+</div>
+
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// ── Generate QR Code ──
+// Change this URL to wherever you host this page
+const pageURL = window.location.href;
+
+new QRCode(document.getElementById("qrcode"), {
+  text: pageURL,
+  width: 160,
+  height: 160,
+  colorDark: "#3a3f47",
+  colorLight: "#ffffff",
+  correctLevel: QRCode.CorrectLevel.H
+});
+
+// ── vCard Download ──
+function downloadVCard() {
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:;Joyce Designs;;;',
+    'FN:Joyce Designs',
+    'ORG:Joyce Designs',
+    'TITLE:Pijamas, Batas y Accesorios Personalizados',
+    'TEL;TYPE=WORK,VOICE:+18295449968',
+    'TEL;TYPE=CELL:+18096048379',
+    'EMAIL;TYPE=WORK:tienda@joyce.do',
+    'URL:https://www.joyce.do',
+    'ADR;TYPE=WORK:;;Calle Elipse No. 9;Urbanización Fernández;;;;República Dominicana',
+    'X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/joycedesigns',
+    'X-SOCIALPROFILE;TYPE=tiktok:https://www.tiktok.com/@joyce.designs',
+    'NOTE:Pijamas\\, batas\\, camisones\\, accesorios personalizados y artículos para bebé. Visítanos en nuestra tienda o en www.joyce.do',
+    'END:VCARD'
+  ].join('\r\n');
+
+  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Joyce_Designs.vcf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
